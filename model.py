@@ -2,7 +2,7 @@ import torch
 from torch import nn
 from copy import deepcopy
 
-class DDQNConv(nn.Module):
+class DDQN(nn.Module):
     """
     CNN Structure that Implements Double Q-learning
     """
@@ -38,3 +38,4 @@ class DDQNConv(nn.Module):
             return self.online(input)
         elif model == 'target':
             return self.target(input)
+        
