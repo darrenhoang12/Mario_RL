@@ -1,1 +1,1 @@
-# Building a AI-Powered Mario using reinforcement learning
+# Building a AI-Powered Mario using Double Deep Q Learning
