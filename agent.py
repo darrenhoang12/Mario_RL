@@ -24,9 +24,17 @@ class Mario:
         self.epsilon = 1.0
         self.epsilon_min = 0.1
         self.epsilon_decay = 0.995
+        self.gamma = 0.9
         self.step = 0
         
         self.save_every = 5e5
+        
+        self.optimizer = torch.optim.Adam(self.model.parameters(), lr=1e-3)
+        self.loss_fn = torch.nn.SmoothL1Loss()
+
+        self.burn_in = 1e4
+        self.learn_every = 3
+        self.sync_every = 1e4
 
     def act(self, state):
         """
@@ -81,7 +89,53 @@ class Mario:
         states, next_states, actions, rewards, dones = map(torch.stack, zip(*batch))
         return states, next_states, actions.squeeze(), rewards.squeeze(), dones.squeeze()
 
+    def td_estimate(self, state, action):
+        current_Q = self.model(state, model='online')[np.arange(0, self.batch_size), action]
+        return current_Q
+
+    @torch.no_grad()
+    def td_target(self, reward, next_state, done):
+        next_state_Q = self.model(next_state, model='online')
+        best_action = torch.argmax(next_state_Q, axis=1)
+        next_Q = self.model(next_state, model='target')[np.arange(0, self.batch_size), best_action]
+        return (reward + (1 - done.float()) * self.gamma * next_Q).float()
+    
+    def update_Q_online(self, td_estimate, td_target):
+        loss = self.loss_fn(td_estimate, td_target)
+        self.optimizer.zero_grad()
+        loss.backward()
+        self.optimizer.step()
+        return loss.item()
+    
+    def sync_Q_target(self):
+        self.model.load_state_dict(self.model.online.state_dict())
+
+    def save(self):
+        save_path = self.save_dir / f'mario_net_{int(self.step // self.save_every)}.chkpt'
+        torch.save(dict(model=self.model.state_dict(), explroation_rate=self.epsilon), save_path)
+        print(f'mario_net saved to {save_path} at step {self.step}')
+
 
     def learn(self):
         """Update online action value function with a batch of experiences"""
-        pass
+        if self.step % self.sync_every == 0:
+            self.sync_Q_target()
+
+        if self.step % self.save_every == 0:
+            self.save()
+
+        if self.step < self.burn_in:
+            return None, None
+        
+        if self.step % self.learn_every != 0:
+            return None, None
+
+        state, next_state, action, reward, done = self.recall()
+
+        td_est = self.td_estimate(state, action)
+
+        td_tgt = self.td_target(reward, next_state, done)
+
+        loss = self.update_Q_online(td_est, td_tgt)
+
+        return (td_est.mean().item(), loss)
