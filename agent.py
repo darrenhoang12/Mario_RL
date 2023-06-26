@@ -32,7 +32,7 @@ class Mario:
         self.optimizer = torch.optim.Adam(self.model.parameters(), lr=1e-3)
         self.loss_fn = torch.nn.SmoothL1Loss()
 
-        self.burn_in = 1e4
+        self.burn_in = 1e5
         self.learn_every = 3
         self.sync_every = 1e4
 
@@ -50,7 +50,8 @@ class Mario:
         if np.random.rand() < self.epsilon:
             action_idx = np.random.randint(self.action_dim)
         else:
-            state_t = torch.tensor(state, device=self.device)
+            state_t = torch.FloatTensor(state).cuda() if self.device == 'cuda' else torch.FloatTensor()
+            state_t = state_t.unsqueeze(0)
             action_values = self.model(state_t, model='online')
             action_idx = torch.argmax(action_values).item()
 
@@ -72,8 +73,8 @@ class Mario:
             done: Whether the episode is over
         """
 
-        state_t = torch.tensor(state, device=self.device)
-        next_state_t = torch.tensor(next_state, device=self.device)
+        state_t = torch.tensor(state, device=self.device).to(dtype=torch.float32)
+        next_state_t = torch.tensor(next_state, device=self.device).to(dtype=torch.float32)
         action_t = torch.tensor([action], device=self.device)
         reward_t = torch.tensor([reward], device=self.device)
         done_t = torch.tensor([done], device=self.device)
@@ -108,11 +109,11 @@ class Mario:
         return loss.item()
     
     def sync_Q_target(self):
-        self.model.load_state_dict(self.model.online.state_dict())
+        self.model.target.load_state_dict(self.model.online.state_dict())
 
     def save(self):
         save_path = self.save_dir / f'mario_net_{int(self.step // self.save_every)}.chkpt'
-        torch.save(dict(model=self.model.state_dict(), explroation_rate=self.epsilon), save_path)
+        torch.save(dict(model=self.model.state_dict(), exploration_rate=self.epsilon), save_path)
         print(f'mario_net saved to {save_path} at step {self.step}')
 
 
@@ -125,6 +126,7 @@ class Mario:
             self.save()
 
         if self.step < self.burn_in:
+            print(self.step)
             return None, None
         
         if self.step % self.learn_every != 0:
