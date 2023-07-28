@@ -7,7 +7,7 @@ from collections import deque
 
 
 class Mario:
-    def __init__(self, state_dim, action_dim, save_dir):
+    def __init__(self, state_dim, action_dim, save_dir, checkpoint=None):
         """Mario reinforcement learning agent with DDQN."""
         self.state_dim = state_dim
         self.action_dim = action_dim
@@ -19,7 +19,7 @@ class Mario:
         self.model = DDQN(self.state_dim, self.action_dim).float()
         self.model = self.model.to(device=self.device)
 
-        self.batch_size = 32
+        self.batch_size = 16
 
         self.epsilon = 1.0
         self.epsilon_min = 0.1
@@ -27,14 +27,17 @@ class Mario:
         self.gamma = 0.9
         self.step = 0
         
-        self.save_every = 5e5
+        self.save_every = 5e4
         
         self.optimizer = torch.optim.Adam(self.model.parameters(), lr=1e-3)
         self.loss_fn = torch.nn.SmoothL1Loss()
 
-        self.burn_in = 1e5
+        self.burn_in = 1e4
         self.learn_every = 3
         self.sync_every = 1e4
+
+        if checkpoint:
+            self.load(checkpoint)
 
     def act(self, state):
         """
@@ -50,7 +53,7 @@ class Mario:
         if np.random.rand() < self.epsilon:
             action_idx = np.random.randint(self.action_dim)
         else:
-            state_t = torch.FloatTensor(state).cuda() if self.device == 'cuda' else torch.FloatTensor()
+            state_t = torch.FloatTensor(np.array(state)).cuda() if self.device == 'cuda' else torch.FloatTensor()
             state_t = state_t.unsqueeze(0)
             action_values = self.model(state_t, model='online')
             action_idx = torch.argmax(action_values).item()
@@ -72,9 +75,8 @@ class Mario:
             reward: Reward received after the action
             done: Whether the episode is over
         """
-
-        state_t = torch.tensor(state, device=self.device).to(dtype=torch.float32)
-        next_state_t = torch.tensor(next_state, device=self.device).to(dtype=torch.float32)
+        state_t = torch.tensor(np.array(state), device=self.device).to(dtype=torch.float32)
+        next_state_t = torch.tensor(np.array(next_state), device=self.device).to(dtype=torch.float32)
         action_t = torch.tensor([action], device=self.device)
         reward_t = torch.tensor([reward], device=self.device)
         done_t = torch.tensor([done], device=self.device)
@@ -116,6 +118,16 @@ class Mario:
         torch.save(dict(model=self.model.state_dict(), exploration_rate=self.epsilon), save_path)
         print(f'mario_net saved to {save_path} at step {self.step}')
 
+    def load(self, load_path):
+        if not load_path.exists():
+            raise ValueError(f"Load path {load_path} does not exist")
+        ckp = torch.load(load_path, map_location=('cuda' if self.use_cuda else 'cpu'))
+        exploration_rate = ckp.get('exploration_rate')
+        state_dict = ckp.get('model')
+
+        print(f'Loading model at {load_path} with exploration rate {exploration_rate}')
+        self.net.load_state_dict(state_dict)
+        self.exploration_rate = exploration_rate
 
     def learn(self):
         """Update online action value function with a batch of experiences"""
