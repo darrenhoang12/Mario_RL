@@ -33,7 +33,6 @@ def main():
 
     mario = Mario(state_dim=(4, 84, 84), action_dim=env.action_space.n, save_dir=save_dir)
     episodes = 40000
-
     # TODO: wandb logging
     for e in range(episodes):
         state = env.reset()
@@ -42,7 +41,6 @@ def main():
             next_state, reward, done, info = env.step(action)
             mario.cache(state, next_state, action, reward, done)
             q, loss = mario.learn()
-            print(q, loss)
             state = next_state
             if done or info['flag_get']:
                 break

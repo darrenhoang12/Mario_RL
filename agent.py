@@ -1,6 +1,7 @@
 import torch
 import numpy as np
 import random
+import gc
 
 from model import DDQN
 from collections import deque
@@ -13,13 +14,13 @@ class Mario:
         self.action_dim = action_dim
         self.save_dir = save_dir
 
-        self.memory = deque(maxlen=100000)
+        self.memory = deque(maxlen=10000)
         
         self.device = 'cuda' if torch.cuda.is_available() else 'cpu'
         self.model = DDQN(self.state_dim, self.action_dim).float()
         self.model = self.model.to(device=self.device)
 
-        self.batch_size = 16
+        self.batch_size = 4
 
         self.epsilon = 1.0
         self.epsilon_min = 0.1
@@ -27,12 +28,12 @@ class Mario:
         self.gamma = 0.9
         self.step = 0
         
-        self.save_every = 5e4
+        self.save_every = 5e5
         
         self.optimizer = torch.optim.Adam(self.model.parameters(), lr=1e-3)
         self.loss_fn = torch.nn.SmoothL1Loss()
 
-        self.burn_in = 1e4
+        self.burn_in = 1e5
         self.learn_every = 3
         self.sync_every = 1e4
 
@@ -131,6 +132,7 @@ class Mario:
 
     def learn(self):
         """Update online action value function with a batch of experiences"""
+        print(self.step)
         if self.step % self.sync_every == 0:
             self.sync_Q_target()
 
@@ -138,7 +140,6 @@ class Mario:
             self.save()
 
         if self.step < self.burn_in:
-            print(self.step)
             return None, None
         
         if self.step % self.learn_every != 0:
@@ -151,5 +152,9 @@ class Mario:
         td_tgt = self.td_target(reward, next_state, done)
 
         loss = self.update_Q_online(td_est, td_tgt)
+
+        del state, next_state, action, reward, done
+        gc.collect()
+        torch.cuda.empty_cache()
 
         return (td_est.mean().item(), loss)
