@@ -1,0 +1,50 @@
+{
+    "os": "Windows-10-10.0.22621-SP0",
+    "python": "3.11.3",
+    "heartbeatAt": "2023-07-30T08:25:34.700852",
+    "startedAt": "2023-07-30T08:25:33.233453",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "C:\\Users\\dhpng\\summer_projects\\Mario_RL\\main.py",
+    "codePath": "main.py",
+    "git": {
+        "remote": "https://github.com/darrenhoang12/Mario_RL.git",
+        "commit": "2c1c7555f77a962091465c1708967514694ebb62"
+    },
+    "email": "darrenhoang12@gmail.com",
+    "root": "C:/Users/dhpng/summer_projects/Mario_RL",
+    "host": "DESKTOP-I8A6QH7",
+    "username": "dhpng",
+    "executable": "C:\\Users\\dhpng\\anaconda3\\envs\\mario_gpu\\python.exe",
+    "cpu_count": 6,
+    "cpu_count_logical": 12,
+    "cpu_freq": {
+        "current": 3400.0,
+        "min": 0.0,
+        "max": 3400.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3400.0,
+            "min": 0.0,
+            "max": 3400.0
+        }
+    ],
+    "disk": {
+        "total": 464.42187118530273,
+        "used": 354.19050216674805
+    },
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce GTX 1660 SUPER",
+            "memory_total": 6442450944
+        }
+    ],
+    "memory": {
+        "total": 15.932750701904297
+    }
+}

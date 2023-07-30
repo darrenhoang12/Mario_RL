@@ -18,8 +18,21 @@ from agent import Mario
 import matplotlib.pyplot as plt
 
 def main():
+    wandb.init(project="Mario RL",
+               config={
+                   "batch_size": 32,
+                   "architecture": "DDQN",
+                   "dataset": "mario_gymnasium",
+                   "episodes": 40000,
+               }
+    )
+
+
     env = gym_super_mario_bros.make('SuperMarioBros-v0')
-    env = JoypadSpace(env, SIMPLE_MOVEMENT)
+    env = JoypadSpace(env,
+                      [['right'],
+                      ['right', 'A']]
+                     )
 
     # Apply preprocessing
     env = SkipFrame(env, 4)
@@ -31,9 +44,9 @@ def main():
     if not os.path.exists(save_dir):
         os.mkdir(save_dir)
 
+    
     mario = Mario(state_dim=(4, 84, 84), action_dim=env.action_space.n, save_dir=save_dir)
     episodes = 40000
-    # TODO: wandb logging
     for e in range(episodes):
         state = env.reset()
         while True:
@@ -44,7 +57,9 @@ def main():
             state = next_state
             if done or info['flag_get']:
                 break
-
+        if q and loss and e % 500 == 0:
+            print(e)
+            wandb.log({'td-est-mean': q, 'loss': loss})
 
 if __name__ == '__main__':
     main()

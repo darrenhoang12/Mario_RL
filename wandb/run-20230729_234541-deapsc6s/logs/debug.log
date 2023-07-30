@@ -1,0 +1,28 @@
+2023-07-29 23:45:41,518 INFO    MainThread:23828 [wandb_setup.py:_flush():76] Current SDK version is 0.15.4
+2023-07-29 23:45:41,518 INFO    MainThread:23828 [wandb_setup.py:_flush():76] Configure stats pid to 23828
+2023-07-29 23:45:41,519 INFO    MainThread:23828 [wandb_setup.py:_flush():76] Loading settings from C:\Users\dhpng\.config\wandb\settings
+2023-07-29 23:45:41,519 INFO    MainThread:23828 [wandb_setup.py:_flush():76] Loading settings from C:\Users\dhpng\summer_projects\Mario_RL\wandb\settings
+2023-07-29 23:45:41,519 INFO    MainThread:23828 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-07-29 23:45:41,519 INFO    MainThread:23828 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2023-07-29 23:45:41,519 INFO    MainThread:23828 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'main.py', 'program': 'C:\\Users\\dhpng\\summer_projects\\Mario_RL\\main.py'}
+2023-07-29 23:45:41,520 INFO    MainThread:23828 [wandb_init.py:_log_setup():507] Logging user logs to C:\Users\dhpng\summer_projects\Mario_RL\wandb\run-20230729_234541-deapsc6s\logs\debug.log
+2023-07-29 23:45:41,520 INFO    MainThread:23828 [wandb_init.py:_log_setup():508] Logging internal logs to C:\Users\dhpng\summer_projects\Mario_RL\wandb\run-20230729_234541-deapsc6s\logs\debug-internal.log
+2023-07-29 23:45:41,520 INFO    MainThread:23828 [wandb_init.py:init():547] calling init triggers
+2023-07-29 23:45:41,520 INFO    MainThread:23828 [wandb_init.py:init():554] wandb.init called with sweep_config: {}
+config: {'batch_size': 32, 'architecture': 'DDQN', 'dataset': 'mario_gymnasium', 'episodes': 40000}
+2023-07-29 23:45:41,520 INFO    MainThread:23828 [wandb_init.py:init():596] starting backend
+2023-07-29 23:45:41,520 INFO    MainThread:23828 [wandb_init.py:init():600] setting up manager
+2023-07-29 23:45:41,528 INFO    MainThread:23828 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=spawn, using: spawn
+2023-07-29 23:45:41,539 INFO    MainThread:23828 [wandb_init.py:init():606] backend started and connected
+2023-07-29 23:45:41,547 INFO    MainThread:23828 [wandb_init.py:init():703] updated telemetry
+2023-07-29 23:45:41,601 INFO    MainThread:23828 [wandb_init.py:init():736] communicating run to backend with 60.0 second timeout
+2023-07-29 23:45:42,128 ERROR   MainThread:23828 [wandb_init.py:init():762] encountered error: It appears that you do not have permission to access the requested resource. Please reach out to the project owner to grant you access. If you have the correct permissions, verify that there are no issues with your networking setup.(Error 404: Not Found)
+2023-07-29 23:45:42,967 ERROR   MainThread:23828 [wandb_init.py:init():1170] It appears that you do not have permission to access the requested resource. Please reach out to the project owner to grant you access. If you have the correct permissions, verify that there are no issues with your networking setup.(Error 404: Not Found)
+Traceback (most recent call last):
+  File "C:\Users\dhpng\anaconda3\envs\mario_gpu\Lib\site-packages\wandb\sdk\wandb_init.py", line 1152, in init
+    run = wi.init()
+          ^^^^^^^^^
+  File "C:\Users\dhpng\anaconda3\envs\mario_gpu\Lib\site-packages\wandb\sdk\wandb_init.py", line 768, in init
+    raise error
+wandb.errors.CommError: It appears that you do not have permission to access the requested resource. Please reach out to the project owner to grant you access. If you have the correct permissions, verify that there are no issues with your networking setup.(Error 404: Not Found)
+2023-07-29 23:45:43,985 WARNING MsgRouterThr:23828 [router.py:message_loop():77] message_loop has been closed

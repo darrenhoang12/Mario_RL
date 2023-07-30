@@ -20,7 +20,7 @@ class Mario:
         self.model = DDQN(self.state_dim, self.action_dim).float()
         self.model = self.model.to(device=self.device)
 
-        self.batch_size = 4
+        self.batch_size = 32
 
         self.epsilon = 1.0
         self.epsilon_min = 0.1
@@ -33,7 +33,7 @@ class Mario:
         self.optimizer = torch.optim.Adam(self.model.parameters(), lr=1e-3)
         self.loss_fn = torch.nn.SmoothL1Loss()
 
-        self.burn_in = 1e5
+        self.burn_in = 1e4
         self.learn_every = 3
         self.sync_every = 1e4
 
@@ -122,17 +122,16 @@ class Mario:
     def load(self, load_path):
         if not load_path.exists():
             raise ValueError(f"Load path {load_path} does not exist")
-        ckp = torch.load(load_path, map_location=('cuda' if self.use_cuda else 'cpu'))
+        ckp = torch.load(load_path, map_location=self.device)
         exploration_rate = ckp.get('exploration_rate')
         state_dict = ckp.get('model')
 
         print(f'Loading model at {load_path} with exploration rate {exploration_rate}')
-        self.net.load_state_dict(state_dict)
+        self.model.load_state_dict(state_dict)
         self.exploration_rate = exploration_rate
 
     def learn(self):
         """Update online action value function with a batch of experiences"""
-        print(self.step)
         if self.step % self.sync_every == 0:
             self.sync_Q_target()
 
@@ -152,9 +151,5 @@ class Mario:
         td_tgt = self.td_target(reward, next_state, done)
 
         loss = self.update_Q_online(td_est, td_tgt)
-
-        del state, next_state, action, reward, done
-        gc.collect()
-        torch.cuda.empty_cache()
 
         return (td_est.mean().item(), loss)
