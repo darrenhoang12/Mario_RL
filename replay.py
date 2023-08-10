@@ -25,7 +25,7 @@ def replay():
     env = FrameStack(env, num_stack=4)
     env.reset()
 
-    checkpoint = Path('checkpoints/2023-08-05T23-32-30/mario_net_49.chkpt')
+    checkpoint = Path('trained_mario.chkpt')
     mario = Mario(state_dim=(4, 84, 84), action_dim=env.action_space.n, save_dir="checkpoints", checkpoint=checkpoint)
     mario.epsilon = mario.epsilon_min
 
