@@ -37,7 +37,7 @@ def main():
 
     save_dir = Path('checkpoints') / datetime.datetime.now().strftime('%Y-%m-%dT%H-%M-%S')
     if not os.path.exists(save_dir):
-        os.mkdir(save_dir)
+        save_dir.mkdir(parents=True, exist_ok=True)
 
     start = time.time()
     mario = Mario(state_dim=(4, 84, 84), action_dim=env.action_space.n, save_dir=save_dir)
