@@ -1,0 +1,28 @@
+2023-07-30 09:51:27,745 INFO    MainThread:30836 [wandb_setup.py:_flush():76] Current SDK version is 0.15.4
+2023-07-30 09:51:27,746 INFO    MainThread:30836 [wandb_setup.py:_flush():76] Configure stats pid to 30836
+2023-07-30 09:51:27,746 INFO    MainThread:30836 [wandb_setup.py:_flush():76] Loading settings from C:\Users\dhpng\.config\wandb\settings
+2023-07-30 09:51:27,746 INFO    MainThread:30836 [wandb_setup.py:_flush():76] Loading settings from C:\Users\dhpng\summer_projects\Mario_RL\wandb\settings
+2023-07-30 09:51:27,746 INFO    MainThread:30836 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-07-30 09:51:27,746 INFO    MainThread:30836 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2023-07-30 09:51:27,746 INFO    MainThread:30836 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'main.py', 'program': 'C:\\Users\\dhpng\\summer_projects\\Mario_RL\\main.py'}
+2023-07-30 09:51:27,746 INFO    MainThread:30836 [wandb_init.py:_log_setup():507] Logging user logs to C:\Users\dhpng\summer_projects\Mario_RL\wandb\run-20230730_095127-u4ggt1ee\logs\debug.log
+2023-07-30 09:51:27,747 INFO    MainThread:30836 [wandb_init.py:_log_setup():508] Logging internal logs to C:\Users\dhpng\summer_projects\Mario_RL\wandb\run-20230730_095127-u4ggt1ee\logs\debug-internal.log
+2023-07-30 09:51:27,747 INFO    MainThread:30836 [wandb_init.py:init():547] calling init triggers
+2023-07-30 09:51:27,747 INFO    MainThread:30836 [wandb_init.py:init():554] wandb.init called with sweep_config: {}
+config: {'batch_size': 32, 'architecture': 'DDQN', 'dataset': 'mario_gymnasium', 'episodes': 40000}
+2023-07-30 09:51:27,747 INFO    MainThread:30836 [wandb_init.py:init():596] starting backend
+2023-07-30 09:51:27,747 INFO    MainThread:30836 [wandb_init.py:init():600] setting up manager
+2023-07-30 09:51:27,750 INFO    MainThread:30836 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=spawn, using: spawn
+2023-07-30 09:51:27,755 INFO    MainThread:30836 [wandb_init.py:init():606] backend started and connected
+2023-07-30 09:51:27,758 INFO    MainThread:30836 [wandb_init.py:init():703] updated telemetry
+2023-07-30 09:51:27,812 INFO    MainThread:30836 [wandb_init.py:init():736] communicating run to backend with 60.0 second timeout
+2023-07-30 09:51:28,560 INFO    MainThread:30836 [wandb_run.py:_on_init():2176] communicating current version
+2023-07-30 09:51:29,094 INFO    MainThread:30836 [wandb_run.py:_on_init():2185] got version response upgrade_message: "wandb version 0.15.7 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2023-07-30 09:51:29,094 INFO    MainThread:30836 [wandb_init.py:init():787] starting run threads in backend
+2023-07-30 09:51:37,624 INFO    MainThread:30836 [wandb_run.py:_console_start():2155] atexit reg
+2023-07-30 09:51:37,624 INFO    MainThread:30836 [wandb_run.py:_redirect():2010] redirect: 3
+2023-07-30 09:51:37,624 INFO    MainThread:30836 [wandb_run.py:_redirect():2075] Wrapping output streams.
+2023-07-30 09:51:37,624 INFO    MainThread:30836 [wandb_run.py:_redirect():2100] Redirects installed.
+2023-07-30 09:51:37,625 INFO    MainThread:30836 [wandb_init.py:init():828] run started, returning control to user process
+2023-07-30 09:52:14,885 WARNING MsgRouterThr:30836 [router.py:message_loop():77] message_loop has been closed

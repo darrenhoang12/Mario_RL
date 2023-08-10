@@ -1,0 +1,60 @@
+C:\Users\dhpng\anaconda3\envs\mario_gpu\Lib\site-packages\gym_super_mario_bros\smb_env.py:148: RuntimeWarning: overflow encountered in scalar subtract
+  return (self.ram[0x86] - self.ram[0x071c]) % 256
+500
+1000
+mario_net saved to checkpoints\2023-07-30T09-52-40\mario_net_1.chkpt at step 500000
+2000
+3000
+mario_net saved to checkpoints\2023-07-30T09-52-40\mario_net_2.chkpt at step 1000000
+mario_net saved to checkpoints\2023-07-30T09-52-40\mario_net_3.chkpt at step 1500000
+5500
+mario_net saved to checkpoints\2023-07-30T09-52-40\mario_net_4.chkpt at step 2000000
+7500
+9000
+mario_net saved to checkpoints\2023-07-30T09-52-40\mario_net_5.chkpt at step 2500000
+9500
+10000
+mario_net saved to checkpoints\2023-07-30T09-52-40\mario_net_6.chkpt at step 3000000
+11000
+12000
+12500
+mario_net saved to checkpoints\2023-07-30T09-52-40\mario_net_7.chkpt at step 3500000
+13000
+13500
+14500
+mario_net saved to checkpoints\2023-07-30T09-52-40\mario_net_8.chkpt at step 4000000
+mario_net saved to checkpoints\2023-07-30T09-52-40\mario_net_9.chkpt at step 4500000
+17000
+17500
+18000
+mario_net saved to checkpoints\2023-07-30T09-52-40\mario_net_10.chkpt at step 5000000
+19000
+mario_net saved to checkpoints\2023-07-30T09-52-40\mario_net_11.chkpt at step 5500000
+20500
+21000
+mario_net saved to checkpoints\2023-07-30T09-52-40\mario_net_12.chkpt at step 6000000
+22500
+23000
+mario_net saved to checkpoints\2023-07-30T09-52-40\mario_net_13.chkpt at step 6500000
+24000
+mario_net saved to checkpoints\2023-07-30T09-52-40\mario_net_14.chkpt at step 7000000
+27000
+mario_net saved to checkpoints\2023-07-30T09-52-40\mario_net_15.chkpt at step 7500000
+28000
+28500
+mario_net saved to checkpoints\2023-07-30T09-52-40\mario_net_16.chkpt at step 8000000
+30500
+31000
+mario_net saved to checkpoints\2023-07-30T09-52-40\mario_net_17.chkpt at step 8500000
+32500
+33000
+mario_net saved to checkpoints\2023-07-30T09-52-40\mario_net_18.chkpt at step 9000000
+33500
+mario_net saved to checkpoints\2023-07-30T09-52-40\mario_net_19.chkpt at step 9500000
+35000
+36000
+mario_net saved to checkpoints\2023-07-30T09-52-40\mario_net_20.chkpt at step 10000000
+37500
+38500
+mario_net saved to checkpoints\2023-07-30T09-52-40\mario_net_21.chkpt at step 10500000
+39500

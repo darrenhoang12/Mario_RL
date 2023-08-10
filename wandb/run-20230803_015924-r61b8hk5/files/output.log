@@ -1,0 +1,56 @@
+C:\Users\dhpng\anaconda3\envs\mario_gpu\Lib\site-packages\gym_super_mario_bros\smb_env.py:148: RuntimeWarning: overflow encountered in scalar subtract
+  return (self.ram[0x86] - self.ram[0x071c]) % 256
+mario_net saved to checkpoints\2023-08-03T01-59-34\mario_net_1.chkpt at step 500000
+mario_net saved to checkpoints\2023-08-03T01-59-34\mario_net_2.chkpt at step 1000000
+mario_net saved to checkpoints\2023-08-03T01-59-34\mario_net_3.chkpt at step 1500000
+mario_net saved to checkpoints\2023-08-03T01-59-34\mario_net_4.chkpt at step 2000000
+mario_net saved to checkpoints\2023-08-03T01-59-34\mario_net_5.chkpt at step 2500000
+mario_net saved to checkpoints\2023-08-03T01-59-34\mario_net_6.chkpt at step 3000000
+mario_net saved to checkpoints\2023-08-03T01-59-34\mario_net_7.chkpt at step 3500000
+mario_net saved to checkpoints\2023-08-03T01-59-34\mario_net_8.chkpt at step 4000000
+mario_net saved to checkpoints\2023-08-03T01-59-34\mario_net_9.chkpt at step 4500000
+mario_net saved to checkpoints\2023-08-03T01-59-34\mario_net_10.chkpt at step 5000000
+mario_net saved to checkpoints\2023-08-03T01-59-34\mario_net_11.chkpt at step 5500000
+mario_net saved to checkpoints\2023-08-03T01-59-34\mario_net_12.chkpt at step 6000000
+mario_net saved to checkpoints\2023-08-03T01-59-34\mario_net_13.chkpt at step 6500000
+mario_net saved to checkpoints\2023-08-03T01-59-34\mario_net_14.chkpt at step 7000000
+mario_net saved to checkpoints\2023-08-03T01-59-34\mario_net_15.chkpt at step 7500000
+mario_net saved to checkpoints\2023-08-03T01-59-34\mario_net_16.chkpt at step 8000000
+mario_net saved to checkpoints\2023-08-03T01-59-34\mario_net_17.chkpt at step 8500000
+mario_net saved to checkpoints\2023-08-03T01-59-34\mario_net_18.chkpt at step 9000000
+mario_net saved to checkpoints\2023-08-03T01-59-34\mario_net_19.chkpt at step 9500000
+mario_net saved to checkpoints\2023-08-03T01-59-34\mario_net_20.chkpt at step 10000000
+mario_net saved to checkpoints\2023-08-03T01-59-34\mario_net_21.chkpt at step 10500000
+mario_net saved to checkpoints\2023-08-03T01-59-34\mario_net_22.chkpt at step 11000000
+mario_net saved to checkpoints\2023-08-03T01-59-34\mario_net_23.chkpt at step 11500000
+mario_net saved to checkpoints\2023-08-03T01-59-34\mario_net_24.chkpt at step 12000000
+mario_net saved to checkpoints\2023-08-03T01-59-34\mario_net_25.chkpt at step 12500000
+mario_net saved to checkpoints\2023-08-03T01-59-34\mario_net_26.chkpt at step 13000000
+mario_net saved to checkpoints\2023-08-03T01-59-34\mario_net_27.chkpt at step 13500000
+mario_net saved to checkpoints\2023-08-03T01-59-34\mario_net_28.chkpt at step 14000000
+mario_net saved to checkpoints\2023-08-03T01-59-34\mario_net_29.chkpt at step 14500000
+mario_net saved to checkpoints\2023-08-03T01-59-34\mario_net_30.chkpt at step 15000000
+mario_net saved to checkpoints\2023-08-03T01-59-34\mario_net_31.chkpt at step 15500000
+mario_net saved to checkpoints\2023-08-03T01-59-34\mario_net_32.chkpt at step 16000000
+mario_net saved to checkpoints\2023-08-03T01-59-34\mario_net_33.chkpt at step 16500000
+mario_net saved to checkpoints\2023-08-03T01-59-34\mario_net_34.chkpt at step 17000000
+mario_net saved to checkpoints\2023-08-03T01-59-34\mario_net_35.chkpt at step 17500000
+mario_net saved to checkpoints\2023-08-03T01-59-34\mario_net_36.chkpt at step 18000000
+mario_net saved to checkpoints\2023-08-03T01-59-34\mario_net_37.chkpt at step 18500000
+mario_net saved to checkpoints\2023-08-03T01-59-34\mario_net_38.chkpt at step 19000000
+Traceback (most recent call last):
+  File "C:\Users\dhpng\summer_projects\Mario_RL\main.py", line 67, in <module>
+    main()
+  File "C:\Users\dhpng\summer_projects\Mario_RL\main.py", line 51, in main
+    q, loss = mario.learn()
+              ^^^^^^^^^^^^^
+  File "C:\Users\dhpng\summer_projects\Mario_RL\agent.py", line 152, in learn
+    loss = self.update_Q_online(td_est, td_tgt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dhpng\summer_projects\Mario_RL\agent.py", line 109, in update_Q_online
+    loss.backward()
+  File "C:\Users\dhpng\anaconda3\envs\mario_gpu\Lib\site-packages\torch\_tensor.py", line 487, in backward
+    torch.autograd.backward(
+  File "C:\Users\dhpng\anaconda3\envs\mario_gpu\Lib\site-packages\torch\autograd\__init__.py", line 200, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt

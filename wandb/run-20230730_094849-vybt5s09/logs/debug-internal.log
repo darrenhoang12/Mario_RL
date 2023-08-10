@@ -1,0 +1,218 @@
+2023-07-30 09:48:49,962 INFO    StreamThr :3248 [internal.py:wandb_internal():86] W&B internal server running at pid: 3248, started at: 2023-07-30 09:48:49.961915
+2023-07-30 09:48:49,964 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: status
+2023-07-30 09:48:49,964 INFO    WriterThread:3248 [datastore.py:open_for_write():85] open: C:\Users\dhpng\summer_projects\Mario_RL\wandb\run-20230730_094849-vybt5s09\run-vybt5s09.wandb
+2023-07-30 09:48:49,968 DEBUG   SenderThread:3248 [sender.py:send():369] send: header
+2023-07-30 09:48:50,010 DEBUG   SenderThread:3248 [sender.py:send():369] send: run
+2023-07-30 09:48:50,820 INFO    SenderThread:3248 [dir_watcher.py:__init__():211] watching files in: C:\Users\dhpng\summer_projects\Mario_RL\wandb\run-20230730_094849-vybt5s09\files
+2023-07-30 09:48:50,821 INFO    SenderThread:3248 [sender.py:_start_run_threads():1100] run started: vybt5s09 with start time 1690735729.963919
+2023-07-30 09:48:50,821 DEBUG   SenderThread:3248 [sender.py:send_request():396] send_request: summary_record
+2023-07-30 09:48:50,822 INFO    SenderThread:3248 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-30 09:48:50,824 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: check_version
+2023-07-30 09:48:50,824 DEBUG   SenderThread:3248 [sender.py:send_request():396] send_request: check_version
+2023-07-30 09:48:51,318 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: run_start
+2023-07-30 09:48:51,353 DEBUG   HandlerThread:3248 [system_info.py:__init__():31] System info init
+2023-07-30 09:48:51,354 DEBUG   HandlerThread:3248 [system_info.py:__init__():46] System info init done
+2023-07-30 09:48:51,354 INFO    HandlerThread:3248 [system_monitor.py:start():181] Starting system monitor
+2023-07-30 09:48:51,354 INFO    SystemMonitor:3248 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-07-30 09:48:51,354 INFO    HandlerThread:3248 [system_monitor.py:probe():201] Collecting system info
+2023-07-30 09:48:51,360 INFO    SystemMonitor:3248 [interfaces.py:start():190] Started cpu monitoring
+2023-07-30 09:48:51,361 INFO    SystemMonitor:3248 [interfaces.py:start():190] Started disk monitoring
+2023-07-30 09:48:51,362 INFO    SystemMonitor:3248 [interfaces.py:start():190] Started gpu monitoring
+2023-07-30 09:48:51,362 INFO    SystemMonitor:3248 [interfaces.py:start():190] Started memory monitoring
+2023-07-30 09:48:51,370 INFO    SystemMonitor:3248 [interfaces.py:start():190] Started network monitoring
+2023-07-30 09:48:51,377 DEBUG   HandlerThread:3248 [system_info.py:probe():195] Probing system
+2023-07-30 09:48:51,379 DEBUG   HandlerThread:3248 [system_info.py:_probe_git():180] Probing git
+2023-07-30 09:48:51,463 DEBUG   HandlerThread:3248 [system_info.py:_probe_git():188] Probing git done
+2023-07-30 09:48:51,464 DEBUG   HandlerThread:3248 [system_info.py:probe():240] Probing system done
+2023-07-30 09:48:51,464 DEBUG   HandlerThread:3248 [system_monitor.py:probe():210] {'os': 'Windows-10-10.0.22621-SP0', 'python': '3.11.3', 'heartbeatAt': '2023-07-30T16:48:51.377662', 'startedAt': '2023-07-30T16:48:49.950748', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': 'C:\\Users\\dhpng\\summer_projects\\Mario_RL\\main.py', 'codePath': 'main.py', 'git': {'remote': 'https://github.com/darrenhoang12/Mario_RL.git', 'commit': '3f86b6a26aae50453516870647be8e0a47cbeb66'}, 'email': 'darrenhoang12@gmail.com', 'root': 'C:/Users/dhpng/summer_projects/Mario_RL', 'host': 'DESKTOP-I8A6QH7', 'username': 'dhpng', 'executable': 'C:\\Users\\dhpng\\anaconda3\\envs\\mario_gpu\\python.exe', 'cpu_count': 6, 'cpu_count_logical': 12, 'cpu_freq': {'current': 3400.0, 'min': 0.0, 'max': 3400.0}, 'cpu_freq_per_core': [{'current': 3400.0, 'min': 0.0, 'max': 3400.0}], 'disk': {'total': 464.42187118530273, 'used': 354.03876876831055}, 'gpu': 'NVIDIA GeForce GTX 1660 SUPER', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce GTX 1660 SUPER', 'memory_total': 6442450944}], 'memory': {'total': 15.932750701904297}}
+2023-07-30 09:48:51,464 INFO    HandlerThread:3248 [system_monitor.py:probe():211] Finished collecting system info
+2023-07-30 09:48:51,464 INFO    HandlerThread:3248 [system_monitor.py:probe():214] Publishing system info
+2023-07-30 09:48:51,464 DEBUG   HandlerThread:3248 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2023-07-30 09:48:51,465 DEBUG   HandlerThread:3248 [system_info.py:_save_pip():67] Saving pip packages done
+2023-07-30 09:48:51,465 DEBUG   HandlerThread:3248 [system_info.py:_save_conda():74] Saving list of conda packages installed into the current environment
+2023-07-30 09:48:51,826 INFO    Thread-16 :3248 [dir_watcher.py:_on_file_created():272] file/dir created: C:\Users\dhpng\summer_projects\Mario_RL\wandb\run-20230730_094849-vybt5s09\files\requirements.txt
+2023-07-30 09:48:51,826 INFO    Thread-16 :3248 [dir_watcher.py:_on_file_created():272] file/dir created: C:\Users\dhpng\summer_projects\Mario_RL\wandb\run-20230730_094849-vybt5s09\files\wandb-summary.json
+2023-07-30 09:48:51,826 INFO    Thread-16 :3248 [dir_watcher.py:_on_file_created():272] file/dir created: C:\Users\dhpng\summer_projects\Mario_RL\wandb\run-20230730_094849-vybt5s09\files\conda-environment.yaml
+2023-07-30 09:48:59,659 DEBUG   HandlerThread:3248 [system_info.py:_save_conda():86] Saving conda packages done
+2023-07-30 09:48:59,661 INFO    HandlerThread:3248 [system_monitor.py:probe():216] Finished publishing system info
+2023-07-30 09:48:59,683 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: status_report
+2023-07-30 09:48:59,683 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: keepalive
+2023-07-30 09:48:59,683 DEBUG   SenderThread:3248 [sender.py:send():369] send: files
+2023-07-30 09:48:59,684 INFO    SenderThread:3248 [sender.py:_save_file():1354] saving file wandb-metadata.json with policy now
+2023-07-30 09:48:59,692 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-30 09:48:59,696 DEBUG   SenderThread:3248 [sender.py:send_request():396] send_request: stop_status
+2023-07-30 09:48:59,913 INFO    Thread-16 :3248 [dir_watcher.py:_on_file_modified():289] file/dir modified: C:\Users\dhpng\summer_projects\Mario_RL\wandb\run-20230730_094849-vybt5s09\files\conda-environment.yaml
+2023-07-30 09:48:59,913 INFO    Thread-16 :3248 [dir_watcher.py:_on_file_created():272] file/dir created: C:\Users\dhpng\summer_projects\Mario_RL\wandb\run-20230730_094849-vybt5s09\files\wandb-metadata.json
+2023-07-30 09:49:00,249 DEBUG   SenderThread:3248 [sender.py:send():369] send: telemetry
+2023-07-30 09:49:00,679 INFO    wandb-upload_0:3248 [upload_job.py:push():133] Uploaded file C:\Users\dhpng\AppData\Local\Temp\tmp_z9asgatwandb\iahhroph-wandb-metadata.json
+2023-07-30 09:49:01,254 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: status_report
+2023-07-30 09:49:06,287 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: status_report
+2023-07-30 09:49:07,990 INFO    Thread-16 :3248 [dir_watcher.py:_on_file_created():272] file/dir created: C:\Users\dhpng\summer_projects\Mario_RL\wandb\run-20230730_094849-vybt5s09\files\output.log
+2023-07-30 09:49:10,017 INFO    Thread-16 :3248 [dir_watcher.py:_on_file_modified():289] file/dir modified: C:\Users\dhpng\summer_projects\Mario_RL\wandb\run-20230730_094849-vybt5s09\files\output.log
+2023-07-30 09:49:12,117 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: status_report
+2023-07-30 09:49:14,710 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-30 09:49:14,711 DEBUG   SenderThread:3248 [sender.py:send_request():396] send_request: stop_status
+2023-07-30 09:49:17,919 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: status_report
+2023-07-30 09:49:22,967 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: status_report
+2023-07-30 09:49:24,146 INFO    Thread-16 :3248 [dir_watcher.py:_on_file_modified():289] file/dir modified: C:\Users\dhpng\summer_projects\Mario_RL\wandb\run-20230730_094849-vybt5s09\files\config.yaml
+2023-07-30 09:49:28,387 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: status_report
+2023-07-30 09:49:29,729 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-30 09:49:29,729 DEBUG   SenderThread:3248 [sender.py:send_request():396] send_request: stop_status
+2023-07-30 09:49:33,867 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: status_report
+2023-07-30 09:49:38,927 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: status_report
+2023-07-30 09:49:43,984 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: status_report
+2023-07-30 09:49:44,733 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-30 09:49:44,733 DEBUG   SenderThread:3248 [sender.py:send_request():396] send_request: stop_status
+2023-07-30 09:49:49,954 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: status_report
+2023-07-30 09:49:51,377 DEBUG   SystemMonitor:3248 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-07-30 09:49:51,378 DEBUG   SenderThread:3248 [sender.py:send():369] send: stats
+2023-07-30 09:49:55,414 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: status_report
+2023-07-30 09:49:59,745 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-30 09:49:59,745 DEBUG   SenderThread:3248 [sender.py:send_request():396] send_request: stop_status
+2023-07-30 09:50:00,899 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: status_report
+2023-07-30 09:50:05,938 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: status_report
+2023-07-30 09:50:10,998 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: status_report
+2023-07-30 09:50:14,757 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-30 09:50:14,758 DEBUG   SenderThread:3248 [sender.py:send_request():396] send_request: stop_status
+2023-07-30 09:50:16,980 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: status_report
+2023-07-30 09:50:21,389 DEBUG   SenderThread:3248 [sender.py:send():369] send: stats
+2023-07-30 09:50:22,402 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: status_report
+2023-07-30 09:50:27,436 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: status_report
+2023-07-30 09:50:29,783 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: stop_status
+2023-07-30 09:50:29,783 DEBUG   SenderThread:3248 [sender.py:send_request():396] send_request: stop_status
+2023-07-30 09:50:32,907 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: status_report
+2023-07-30 09:50:37,962 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: status_report
+2023-07-30 09:50:38,207 DEBUG   SenderThread:3248 [sender.py:send():369] send: exit
+2023-07-30 09:50:38,207 INFO    SenderThread:3248 [sender.py:send_exit():574] handling exit code: 255
+2023-07-30 09:50:38,209 INFO    SenderThread:3248 [sender.py:send_exit():576] handling runtime: 106
+2023-07-30 09:50:38,211 INFO    SenderThread:3248 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-30 09:50:38,211 INFO    SenderThread:3248 [sender.py:send_exit():582] send defer
+2023-07-30 09:50:38,211 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: defer
+2023-07-30 09:50:38,211 INFO    HandlerThread:3248 [handler.py:handle_request_defer():170] handle defer: 0
+2023-07-30 09:50:38,212 DEBUG   SenderThread:3248 [sender.py:send_request():396] send_request: defer
+2023-07-30 09:50:38,212 INFO    SenderThread:3248 [sender.py:send_request_defer():598] handle sender defer: 0
+2023-07-30 09:50:38,212 INFO    SenderThread:3248 [sender.py:transition_state():602] send defer: 1
+2023-07-30 09:50:38,212 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: defer
+2023-07-30 09:50:38,212 INFO    HandlerThread:3248 [handler.py:handle_request_defer():170] handle defer: 1
+2023-07-30 09:50:38,213 DEBUG   SenderThread:3248 [sender.py:send_request():396] send_request: defer
+2023-07-30 09:50:38,213 INFO    SenderThread:3248 [sender.py:send_request_defer():598] handle sender defer: 1
+2023-07-30 09:50:38,213 INFO    SenderThread:3248 [sender.py:transition_state():602] send defer: 2
+2023-07-30 09:50:38,214 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: defer
+2023-07-30 09:50:38,214 INFO    HandlerThread:3248 [handler.py:handle_request_defer():170] handle defer: 2
+2023-07-30 09:50:38,214 INFO    HandlerThread:3248 [system_monitor.py:finish():190] Stopping system monitor
+2023-07-30 09:50:38,214 DEBUG   SystemMonitor:3248 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-07-30 09:50:38,223 DEBUG   SystemMonitor:3248 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-07-30 09:50:38,223 INFO    HandlerThread:3248 [interfaces.py:finish():202] Joined cpu monitor
+2023-07-30 09:50:38,224 INFO    HandlerThread:3248 [interfaces.py:finish():202] Joined disk monitor
+2023-07-30 09:50:38,282 INFO    HandlerThread:3248 [interfaces.py:finish():202] Joined gpu monitor
+2023-07-30 09:50:38,282 INFO    HandlerThread:3248 [interfaces.py:finish():202] Joined memory monitor
+2023-07-30 09:50:38,282 INFO    HandlerThread:3248 [interfaces.py:finish():202] Joined network monitor
+2023-07-30 09:50:38,282 DEBUG   SenderThread:3248 [sender.py:send_request():396] send_request: defer
+2023-07-30 09:50:38,282 INFO    SenderThread:3248 [sender.py:send_request_defer():598] handle sender defer: 2
+2023-07-30 09:50:38,282 INFO    SenderThread:3248 [sender.py:transition_state():602] send defer: 3
+2023-07-30 09:50:38,283 DEBUG   SenderThread:3248 [sender.py:send():369] send: stats
+2023-07-30 09:50:38,283 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: defer
+2023-07-30 09:50:38,283 INFO    HandlerThread:3248 [handler.py:handle_request_defer():170] handle defer: 3
+2023-07-30 09:50:38,283 DEBUG   SenderThread:3248 [sender.py:send_request():396] send_request: defer
+2023-07-30 09:50:38,283 INFO    SenderThread:3248 [sender.py:send_request_defer():598] handle sender defer: 3
+2023-07-30 09:50:38,283 INFO    SenderThread:3248 [sender.py:transition_state():602] send defer: 4
+2023-07-30 09:50:38,283 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: defer
+2023-07-30 09:50:38,283 INFO    HandlerThread:3248 [handler.py:handle_request_defer():170] handle defer: 4
+2023-07-30 09:50:38,285 DEBUG   SenderThread:3248 [sender.py:send_request():396] send_request: defer
+2023-07-30 09:50:38,285 INFO    SenderThread:3248 [sender.py:send_request_defer():598] handle sender defer: 4
+2023-07-30 09:50:38,285 INFO    SenderThread:3248 [sender.py:transition_state():602] send defer: 5
+2023-07-30 09:50:38,285 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: defer
+2023-07-30 09:50:38,285 INFO    HandlerThread:3248 [handler.py:handle_request_defer():170] handle defer: 5
+2023-07-30 09:50:38,285 DEBUG   SenderThread:3248 [sender.py:send():369] send: summary
+2023-07-30 09:50:38,286 INFO    SenderThread:3248 [sender.py:_save_file():1354] saving file wandb-summary.json with policy end
+2023-07-30 09:50:38,287 DEBUG   SenderThread:3248 [sender.py:send_request():396] send_request: defer
+2023-07-30 09:50:38,287 INFO    SenderThread:3248 [sender.py:send_request_defer():598] handle sender defer: 5
+2023-07-30 09:50:38,287 INFO    SenderThread:3248 [sender.py:transition_state():602] send defer: 6
+2023-07-30 09:50:38,287 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: defer
+2023-07-30 09:50:38,287 INFO    HandlerThread:3248 [handler.py:handle_request_defer():170] handle defer: 6
+2023-07-30 09:50:38,287 DEBUG   SenderThread:3248 [sender.py:send_request():396] send_request: defer
+2023-07-30 09:50:38,287 INFO    SenderThread:3248 [sender.py:send_request_defer():598] handle sender defer: 6
+2023-07-30 09:50:38,287 INFO    SenderThread:3248 [sender.py:transition_state():602] send defer: 7
+2023-07-30 09:50:38,287 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: status_report
+2023-07-30 09:50:38,287 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: defer
+2023-07-30 09:50:38,287 INFO    HandlerThread:3248 [handler.py:handle_request_defer():170] handle defer: 7
+2023-07-30 09:50:38,288 DEBUG   SenderThread:3248 [sender.py:send_request():396] send_request: defer
+2023-07-30 09:50:38,288 INFO    SenderThread:3248 [sender.py:send_request_defer():598] handle sender defer: 7
+2023-07-30 09:50:38,912 INFO    Thread-16 :3248 [dir_watcher.py:_on_file_modified():289] file/dir modified: C:\Users\dhpng\summer_projects\Mario_RL\wandb\run-20230730_094849-vybt5s09\files\wandb-summary.json
+2023-07-30 09:50:39,109 INFO    SenderThread:3248 [sender.py:transition_state():602] send defer: 8
+2023-07-30 09:50:39,109 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: defer
+2023-07-30 09:50:39,109 INFO    HandlerThread:3248 [handler.py:handle_request_defer():170] handle defer: 8
+2023-07-30 09:50:39,110 DEBUG   SenderThread:3248 [sender.py:send_request():396] send_request: defer
+2023-07-30 09:50:39,110 INFO    SenderThread:3248 [sender.py:send_request_defer():598] handle sender defer: 8
+2023-07-30 09:50:39,110 INFO    SenderThread:3248 [job_builder.py:build():232] Attempting to build job artifact
+2023-07-30 09:50:39,110 INFO    SenderThread:3248 [job_builder.py:build():256] is repo sourced job
+2023-07-30 09:50:39,124 INFO    SenderThread:3248 [job_builder.py:build():297] adding wandb-job metadata file
+2023-07-30 09:50:39,141 INFO    SenderThread:3248 [sender.py:transition_state():602] send defer: 9
+2023-07-30 09:50:39,141 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: defer
+2023-07-30 09:50:39,142 INFO    HandlerThread:3248 [handler.py:handle_request_defer():170] handle defer: 9
+2023-07-30 09:50:39,142 DEBUG   SenderThread:3248 [sender.py:send():369] send: artifact
+2023-07-30 09:50:39,255 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: poll_exit
+2023-07-30 09:50:39,926 INFO    Thread-16 :3248 [dir_watcher.py:_on_file_modified():289] file/dir modified: C:\Users\dhpng\summer_projects\Mario_RL\wandb\run-20230730_094849-vybt5s09\files\output.log
+2023-07-30 09:50:39,935 INFO    wandb-upload_0:3248 [upload_job.py:push():88] Skipped uploading C:\Users\dhpng\AppData\Local\wandb\wandb\artifacts\staging\tmp372q4y7c
+2023-07-30 09:50:40,475 INFO    wandb-upload_1:3248 [upload_job.py:push():91] Uploaded file C:\Users\dhpng\AppData\Local\wandb\wandb\artifacts\staging\tmpie6fw6wc
+2023-07-30 09:50:41,450 INFO    SenderThread:3248 [sender.py:send_artifact():1450] sent artifact job-https___github.com_darrenhoang12_Mario_RL.git_main.py - {'id': 'QXJ0aWZhY3Q6NTI3MzU4NzI4', 'digest': 'afcff00655b51f54175e95550086946d', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjg2NjE2NjE4', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6NTI3MTAwNDgz', 'versionIndex': 0}}, 'version': 'latest'}
+2023-07-30 09:50:41,450 DEBUG   SenderThread:3248 [sender.py:send_request():396] send_request: defer
+2023-07-30 09:50:41,451 INFO    SenderThread:3248 [sender.py:send_request_defer():598] handle sender defer: 9
+2023-07-30 09:50:41,451 INFO    SenderThread:3248 [dir_watcher.py:finish():359] shutting down directory watcher
+2023-07-30 09:50:41,955 INFO    SenderThread:3248 [dir_watcher.py:finish():389] scan: C:\Users\dhpng\summer_projects\Mario_RL\wandb\run-20230730_094849-vybt5s09\files
+2023-07-30 09:50:41,956 INFO    SenderThread:3248 [dir_watcher.py:finish():403] scan save: C:\Users\dhpng\summer_projects\Mario_RL\wandb\run-20230730_094849-vybt5s09\files\conda-environment.yaml conda-environment.yaml
+2023-07-30 09:50:41,956 INFO    SenderThread:3248 [dir_watcher.py:finish():403] scan save: C:\Users\dhpng\summer_projects\Mario_RL\wandb\run-20230730_094849-vybt5s09\files\config.yaml config.yaml
+2023-07-30 09:50:41,959 INFO    SenderThread:3248 [dir_watcher.py:finish():403] scan save: C:\Users\dhpng\summer_projects\Mario_RL\wandb\run-20230730_094849-vybt5s09\files\output.log output.log
+2023-07-30 09:50:41,962 INFO    SenderThread:3248 [dir_watcher.py:finish():403] scan save: C:\Users\dhpng\summer_projects\Mario_RL\wandb\run-20230730_094849-vybt5s09\files\requirements.txt requirements.txt
+2023-07-30 09:50:41,963 INFO    SenderThread:3248 [dir_watcher.py:finish():403] scan save: C:\Users\dhpng\summer_projects\Mario_RL\wandb\run-20230730_094849-vybt5s09\files\wandb-metadata.json wandb-metadata.json
+2023-07-30 09:50:41,965 INFO    SenderThread:3248 [dir_watcher.py:finish():403] scan save: C:\Users\dhpng\summer_projects\Mario_RL\wandb\run-20230730_094849-vybt5s09\files\wandb-summary.json wandb-summary.json
+2023-07-30 09:50:41,967 INFO    SenderThread:3248 [sender.py:transition_state():602] send defer: 10
+2023-07-30 09:50:41,969 DEBUG   SenderThread:3248 [sender.py:send_request():396] send_request: poll_exit
+2023-07-30 09:50:41,969 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: defer
+2023-07-30 09:50:41,969 INFO    HandlerThread:3248 [handler.py:handle_request_defer():170] handle defer: 10
+2023-07-30 09:50:41,970 DEBUG   SenderThread:3248 [sender.py:send_request():396] send_request: defer
+2023-07-30 09:50:41,972 INFO    SenderThread:3248 [sender.py:send_request_defer():598] handle sender defer: 10
+2023-07-30 09:50:41,973 INFO    SenderThread:3248 [file_pusher.py:finish():159] shutting down file pusher
+2023-07-30 09:50:42,305 INFO    wandb-upload_1:3248 [upload_job.py:push():133] Uploaded file C:\Users\dhpng\summer_projects\Mario_RL\wandb\run-20230730_094849-vybt5s09\files\config.yaml
+2023-07-30 09:50:42,939 INFO    wandb-upload_0:3248 [upload_job.py:push():133] Uploaded file C:\Users\dhpng\summer_projects\Mario_RL\wandb\run-20230730_094849-vybt5s09\files\conda-environment.yaml
+2023-07-30 09:50:42,988 INFO    wandb-upload_3:3248 [upload_job.py:push():133] Uploaded file C:\Users\dhpng\summer_projects\Mario_RL\wandb\run-20230730_094849-vybt5s09\files\requirements.txt
+2023-07-30 09:50:43,481 INFO    wandb-upload_2:3248 [upload_job.py:push():133] Uploaded file C:\Users\dhpng\summer_projects\Mario_RL\wandb\run-20230730_094849-vybt5s09\files\output.log
+2023-07-30 09:50:43,561 INFO    wandb-upload_4:3248 [upload_job.py:push():133] Uploaded file C:\Users\dhpng\summer_projects\Mario_RL\wandb\run-20230730_094849-vybt5s09\files\wandb-summary.json
+2023-07-30 09:50:43,764 INFO    Thread-15 (_thread_body):3248 [sender.py:transition_state():602] send defer: 11
+2023-07-30 09:50:43,764 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: defer
+2023-07-30 09:50:43,764 INFO    HandlerThread:3248 [handler.py:handle_request_defer():170] handle defer: 11
+2023-07-30 09:50:43,765 DEBUG   SenderThread:3248 [sender.py:send_request():396] send_request: defer
+2023-07-30 09:50:43,765 INFO    SenderThread:3248 [sender.py:send_request_defer():598] handle sender defer: 11
+2023-07-30 09:50:43,765 INFO    SenderThread:3248 [file_pusher.py:join():164] waiting for file pusher
+2023-07-30 09:50:43,765 INFO    SenderThread:3248 [sender.py:transition_state():602] send defer: 12
+2023-07-30 09:50:43,765 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: defer
+2023-07-30 09:50:43,765 INFO    HandlerThread:3248 [handler.py:handle_request_defer():170] handle defer: 12
+2023-07-30 09:50:43,765 DEBUG   SenderThread:3248 [sender.py:send_request():396] send_request: defer
+2023-07-30 09:50:43,765 INFO    SenderThread:3248 [sender.py:send_request_defer():598] handle sender defer: 12
+2023-07-30 09:50:44,114 INFO    SenderThread:3248 [sender.py:transition_state():602] send defer: 13
+2023-07-30 09:50:44,115 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: defer
+2023-07-30 09:50:44,115 INFO    HandlerThread:3248 [handler.py:handle_request_defer():170] handle defer: 13
+2023-07-30 09:50:44,115 DEBUG   SenderThread:3248 [sender.py:send_request():396] send_request: defer
+2023-07-30 09:50:44,115 INFO    SenderThread:3248 [sender.py:send_request_defer():598] handle sender defer: 13
+2023-07-30 09:50:44,115 INFO    SenderThread:3248 [sender.py:transition_state():602] send defer: 14
+2023-07-30 09:50:44,116 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: defer
+2023-07-30 09:50:44,116 DEBUG   SenderThread:3248 [sender.py:send():369] send: final
+2023-07-30 09:50:44,116 INFO    HandlerThread:3248 [handler.py:handle_request_defer():170] handle defer: 14
+2023-07-30 09:50:44,116 DEBUG   SenderThread:3248 [sender.py:send():369] send: footer
+2023-07-30 09:50:44,116 DEBUG   SenderThread:3248 [sender.py:send_request():396] send_request: defer
+2023-07-30 09:50:44,116 INFO    SenderThread:3248 [sender.py:send_request_defer():598] handle sender defer: 14
+2023-07-30 09:50:44,116 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: poll_exit
+2023-07-30 09:50:44,116 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: server_info
+2023-07-30 09:50:44,118 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: get_summary
+2023-07-30 09:50:44,118 DEBUG   SenderThread:3248 [sender.py:send_request():396] send_request: poll_exit
+2023-07-30 09:50:44,118 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: sampled_history
+2023-07-30 09:50:44,118 DEBUG   SenderThread:3248 [sender.py:send_request():396] send_request: server_info
+2023-07-30 09:50:44,202 INFO    MainThread:3248 [wandb_run.py:_footer_history_summary_info():3467] rendering history
+2023-07-30 09:50:44,202 INFO    MainThread:3248 [wandb_run.py:_footer_history_summary_info():3499] rendering summary
+2023-07-30 09:50:44,202 INFO    MainThread:3248 [wandb_run.py:_footer_sync_info():3426] logging synced files
+2023-07-30 09:50:44,203 DEBUG   HandlerThread:3248 [handler.py:handle_request():144] handle_request: shutdown
+2023-07-30 09:50:44,204 INFO    HandlerThread:3248 [handler.py:finish():854] shutting down handler
+2023-07-30 09:50:45,122 INFO    WriterThread:3248 [datastore.py:close():298] close: C:\Users\dhpng\summer_projects\Mario_RL\wandb\run-20230730_094849-vybt5s09\run-vybt5s09.wandb
+2023-07-30 09:50:45,215 INFO    SenderThread:3248 [sender.py:finish():1526] shutting down sender
+2023-07-30 09:50:45,215 INFO    SenderThread:3248 [file_pusher.py:finish():159] shutting down file pusher
+2023-07-30 09:50:45,215 INFO    SenderThread:3248 [file_pusher.py:join():164] waiting for file pusher

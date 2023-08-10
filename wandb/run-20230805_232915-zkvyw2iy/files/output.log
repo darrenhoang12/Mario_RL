@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "C:\Users\dhpng\summer_projects\Mario_RL\main.py", line 68, in <module>
+    main()
+  File "C:\Users\dhpng\summer_projects\Mario_RL\main.py", line 44, in main
+    mario = Mario(state_dim=(4, 84, 84), action_dim=env.action_space.n, save_dir=save_dir, checkpoint=checkpoint)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dhpng\summer_projects\Mario_RL\agent.py", line 40, in __init__
+    self.load(checkpoint)
+  File "C:\Users\dhpng\summer_projects\Mario_RL\agent.py", line 122, in load
+    if not load_path.exists():
+           ^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'exists'

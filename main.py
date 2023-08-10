@@ -1,21 +1,15 @@
 import os
+import time
 import wandb
-import torch
-from PIL import Image
-from torch import nn
-from torchvision import transforms as T
-from PIL import Image
 from pathlib import Path
-import numpy as np
 import datetime
 
-from gym.wrappers import FrameStack, GrayScaleObservation
+from gym.wrappers import FrameStack, GrayScaleObservation, TransformObservation
 from nes_py.wrappers import JoypadSpace
 import gym_super_mario_bros
-from gym_super_mario_bros.actions import SIMPLE_MOVEMENT
 from wrappers import SkipFrame, ResizeObservation
 from agent import Mario
-import matplotlib.pyplot as plt
+
 
 def main():
     wandb.init(project="Mario RL",
@@ -35,18 +29,19 @@ def main():
                      )
 
     # Apply preprocessing
-    env = SkipFrame(env, 4)
-    env = GrayScaleObservation(env, keep_dim=True)
+    env = SkipFrame(env, skip=4)
+    env = GrayScaleObservation(env, keep_dim=False)
     env = ResizeObservation(env, shape=84)
-    env = FrameStack(env, 4)
+    env = TransformObservation(env, f=lambda x: x / 255.)
+    env = FrameStack(env, num_stack=4)
 
     save_dir = Path('checkpoints') / datetime.datetime.now().strftime('%Y-%m-%dT%H-%M-%S')
     if not os.path.exists(save_dir):
         os.mkdir(save_dir)
 
-    
+    start = time.time()
     mario = Mario(state_dim=(4, 84, 84), action_dim=env.action_space.n, save_dir=save_dir)
-    episodes = 40000
+    episodes = 45000
     for e in range(episodes):
         state = env.reset()
         while True:
@@ -57,9 +52,16 @@ def main():
             state = next_state
             if done or info['flag_get']:
                 break
-        if q and loss and e % 500 == 0:
-            print(e)
-            wandb.log({'td-est-mean': q, 'loss': loss})
+        if q and loss and e % 20 == 0:
+            wandb.log({
+                'td-est-mean': q, 
+                'loss': loss, 
+                'epsilon': mario.epsilon,
+                'episode': e,
+                'step': mario.step
+                })
+    end = time.time()
+    print("Time elapsed: ", end - start, "seconds")
 
 if __name__ == '__main__':
     main()

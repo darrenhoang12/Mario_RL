@@ -1,0 +1,32 @@
+C:\Users\dhpng\anaconda3\envs\mario_gpu\Lib\site-packages\gym_super_mario_bros\smb_env.py:148: RuntimeWarning: overflow encountered in scalar subtract
+  return (self.ram[0x86] - self.ram[0x071c]) % 256
+Traceback (most recent call last):
+  File "C:\Users\dhpng\summer_projects\Mario_RL\main.py", line 67, in <module>
+    main()
+  File "C:\Users\dhpng\summer_projects\Mario_RL\main.py", line 49, in main
+    next_state, reward, done, info = env.step(action)
+                                     ^^^^^^^^^^^^^^^^
+  File "C:\Users\dhpng\anaconda3\envs\mario_gpu\Lib\site-packages\gym\wrappers\frame_stack.py", line 115, in step
+    observation, reward, done, info = self.env.step(action)
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dhpng\anaconda3\envs\mario_gpu\Lib\site-packages\gym\core.py", line 282, in step
+    observation, reward, done, info = self.env.step(action)
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dhpng\anaconda3\envs\mario_gpu\Lib\site-packages\gym\core.py", line 282, in step
+    observation, reward, done, info = self.env.step(action)
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dhpng\anaconda3\envs\mario_gpu\Lib\site-packages\gym\core.py", line 282, in step
+    observation, reward, done, info = self.env.step(action)
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dhpng\summer_projects\Mario_RL\wrappers.py", line 36, in step
+    obs, reward, done, info = self.env.step(action)
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dhpng\anaconda3\envs\mario_gpu\Lib\site-packages\nes_py\wrappers\joypad_space.py", line 74, in step
+    return self.env.step(self._action_map[action])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dhpng\anaconda3\envs\mario_gpu\Lib\site-packages\gym\wrappers\time_limit.py", line 18, in step
+    observation, reward, done, info = self.env.step(action)
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dhpng\anaconda3\envs\mario_gpu\Lib\site-packages\nes_py\nes_env.py", line 300, in step
+    _LIB.Step(self._env)
+KeyboardInterrupt

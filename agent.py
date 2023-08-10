@@ -1,7 +1,6 @@
 import torch
 import numpy as np
 import random
-import gc
 
 from model import DDQN
 from collections import deque
@@ -24,16 +23,16 @@ class Mario:
 
         self.epsilon = 1.0
         self.epsilon_min = 0.1
-        self.epsilon_decay = 0.995
+        self.epsilon_decay = 0.99999975
         self.gamma = 0.9
         self.step = 0
         
         self.save_every = 5e5
         
-        self.optimizer = torch.optim.Adam(self.model.parameters(), lr=1e-3)
+        self.optimizer = torch.optim.Adam(self.model.parameters(), lr=0.00025)
         self.loss_fn = torch.nn.SmoothL1Loss()
 
-        self.burn_in = 1e4
+        self.burn_in = 1e5
         self.learn_every = 3
         self.sync_every = 1e4
 
