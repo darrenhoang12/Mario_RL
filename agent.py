@@ -53,7 +53,7 @@ class Mario:
         if np.random.rand() < self.epsilon:
             action_idx = np.random.randint(self.action_dim)
         else:
-            state_t = torch.FloatTensor(np.array(state)).cuda() if self.device == 'cuda' else torch.FloatTensor()
+            state_t = torch.FloatTensor(np.array(state)).cuda() if self.device == 'cuda' else torch.FloatTensor(np.array(state))
             state_t = state_t.unsqueeze(0)
             action_values = self.model(state_t, model='online')
             action_idx = torch.argmax(action_values).item()
